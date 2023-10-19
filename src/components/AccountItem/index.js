@@ -8,13 +8,20 @@ const cx = classNames.bind(styles)
 function AccountItem() {
     return (
         <div className={cx('wrapper')}>
-            <img className={cx('avatar')} src="https://picsum.photos/40" alt="username" />
+            <img
+                className={cx('avatar')}
+                src="https://picsum.photos/40"
+                alt="username"
+            />
             <div className={cx('info')}>
                 <h4 className={cx('name')}>
                     <span>Pham Quang Minh</span>
-                    <FontAwesomeIcon className={cx('check')} icon={faCircleCheck} />
+                    <FontAwesomeIcon
+                        className={cx('check')}
+                        icon={faCircleCheck}
+                    />
                 </h4>
-                <span className={cx('username')}>quangminh2451</span>
+                <p className={cx('username')}>quangminh2451</p>
             </div>
         </div>
     )
