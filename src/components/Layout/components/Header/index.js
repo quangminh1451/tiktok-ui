@@ -7,6 +7,7 @@ import Tippy from '@tippyjs/react/headless'
 import { Wrapper as PopperWrapper } from '~/components/Popper'
 import styles from './Header.module.scss'
 import images from '~/assets/images'
+import Button from '~/components/Button'
 import AccountItem from '~/components/AccountItem'
 
 const cx = classNames.bind(styles)
@@ -22,7 +23,11 @@ function Header() {
                     visible={searchResult.length > 0}
                     interactive
                     render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                        <div
+                            className={cx('search-result')}
+                            tabIndex="-1"
+                            {...attrs}
+                        >
                             <PopperWrapper>
                                 <h4 className={cx('search-title')}>Accounts</h4>
                                 <AccountItem />
@@ -38,13 +43,19 @@ function Header() {
                         <button className={cx('clear')}>
                             <img src={images.close} alt="close-icon" />
                         </button>
-                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
+                        <FontAwesomeIcon
+                            className={cx('loading')}
+                            icon={faSpinner}
+                        />
                         <button className={cx('search-btn')}>
                             <img src={images.search} alt="search-icon" />
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx('actions')}></div>
+                <div className={cx('actions')}>
+                    <Button text>Upload</Button>
+                    <Button primary>Log in</Button>
+                </div>
             </div>
         </header>
     )
